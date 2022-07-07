@@ -7,7 +7,7 @@
 <div class='price_tracking'>
     <div class="form_block">
         <div class='top_bar'>
-            <h3>物品價格追蹤test3</h3>
+            <h3>物品價格追蹤</h3>
             <div class='left_icon'>
                 <div class='list_btn'>
                     <i class="fa-solid fa-list-ul"></i>
