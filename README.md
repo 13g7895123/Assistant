@@ -1,2 +1,2 @@
-# assistant
+# Assistant
 help me for everything
