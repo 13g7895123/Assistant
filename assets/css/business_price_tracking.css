@@ -1,0 +1,257 @@
+@charset "UTF-8";
+
+* {
+  font-family: 微軟正黑體;
+
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFC954;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.price_tracking {
+  width: 100%;
+  height: 100%;
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* opacity: 0.3; */
+}
+
+.form_block {
+  padding: 20px;
+  border: 4px solid #444;
+  box-shadow: 0px 0px 15px;
+  background-color: #f3f3f3;
+  position: relative;
+}
+
+.top_bar {
+  margin: -20px;
+  font-size: 30px;
+  padding: 15px;
+  letter-spacing: 1px;
+  color: #f3f3f3;
+  background-color: #FF3D4A;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+h3 {
+  font-weight: 600;
+}
+
+.left_icon {
+  display: flex;
+}
+
+.form_price_tracking {
+  line-height: 60px;
+  margin-top: 30px;
+  margin-right: 15px;
+}
+
+.state_block {
+  display: flex;
+}
+
+.radio_group {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radio_group input {
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.radio_group label {
+  width: 130px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+label {
+  padding: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  width: 56px;
+  text-align: center;
+}
+
+select {
+  width: 180px;
+  height: 40px;
+  border: 3px solid #444;
+  background-color: #f3f3f3;
+}
+
+input {
+  width: 100;
+  height: 40px;
+  padding: 3px;
+  border: 3px solid #444;
+}
+
+.web_address,
+.remark {
+  width: 87%;
+}
+
+.form_block .btn {
+  display: flex;
+  justify-content: flex-end;
+  height: 50px;
+  width: 100%;
+  margin: 0px;
+}
+
+.form_block .submit_btn {
+  width: 70px;
+  height: 40px;
+  padding: 3px;
+  text-align: center;
+  right: 7px;
+  cursor: pointer;
+  background-color: #FF3D4A;
+  color: #f3f3f3;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.form_block .submit_btn:hover {
+  border: 3px solid #444;
+}
+
+.fa-solid {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.fa-solid:hover {
+  transform: scale(1.2);
+  transform-origin: (100%, 0);
+  transition-duration: 0.5s;
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  background-color: #f9dea4;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.5;
+  display: none;
+}
+
+.plus_dialog {
+  position: fixed;
+  display: none;
+  background-color: #eeeeee;
+  box-shadow: 0px 0px 10px;
+  width: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+.plus_dialog form {
+  width: 100%;
+  font-weight: 600;
+  position: relative;
+}
+
+.plus_dialog h3 {
+  margin: -10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #FF3D4A;
+  color: #eee;
+}
+
+.plus_dialog .add_product_left_icon {
+  display: flex;
+}
+
+.plus_dialog .setting {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  color: #eee;
+}
+
+.plus_dialog .x {
+  position: absolute;
+  top: 10px;
+  right: 3px;
+  color: #eee;
+}
+
+.plus_dialog div {
+  font-size: 20px;
+}
+
+.plus_dialog .plus {
+  text-align: center;
+}
+
+.plus_dialog input {
+  width: 100%;
+  text-align: center;
+}
+
+.plus_dialog .btn {
+  height: 50px;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.plus_dialog .add_btn {
+  text-align: center;
+  background-color: #FF3D4A;
+  color: #eee;
+  width: 80px;
+  font-weight: 600;
+  padding: 30, 50px;
+}
+
+.setting_dialog {
+  position: fixed;
+  display: none;
+  background-color: #eeeeee;
+  box-shadow: 0px 0px 10px;
+  width: 300px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.show {
+  display: block;
+}
+
+audio {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
