@@ -92,7 +92,7 @@ if (BaseWork::_get('PageName') != "" && file_exists('Pages/' . BaseWork::_get('P
     </body>
     <script>
         $(document).ready(function() {
-            const ajax_url = "<?php if ($NOW_Page) echo 'Pages/ajax/' . $NOW_Page . '.php'; ?>";
+            const ajax_url = "<?php if ($NOW_Page) echo './Pages/ajax/' . $NOW_Page . '.php'; ?>";
             <?php
                 include(__DIR__ . '/Pages/js/' . $NOW_Page . '.js');
             ?>

@@ -64,7 +64,7 @@ function loading_item(item, sec_item = '') {
     var res;
     $.ajax({
         type: "POST",
-        url: "./Pages/ajax/business_price_tracking.php",
+        url: ajax_url,
         dataType: "JSON",
         async: false,
         data: {

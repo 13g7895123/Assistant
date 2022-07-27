@@ -87,6 +87,28 @@
     </form>
 </div>
 
+
+<form class='dia_setting'>
+    <h3>設定預設分類</h3>
+    <h5>分類</h5>
+    <div class='form_content'>
+        <select name='dia_add_classification' class='dia_add_classification'>
+
+        </select>
+        <div class='plus'>+</div>
+        <select name='dia_add_classification_sub' class='dia_add_classification_sub'>
+            
+        </select>
+    </div>
+    
+    
+    <div class='btn'>
+        <div class='add_btn'>新增</div>
+    </div>
+    
+</form>
+
+
 <!-- <div class='default_setting_dialog'>
     <form  method="post" action='./Pages/ajax/business_price_tracking_form_add_product.php' name='form_add_product' class='form_add_product'>
         <h3>新增商品</h3>
