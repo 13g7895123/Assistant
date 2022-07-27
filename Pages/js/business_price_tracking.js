@@ -59,27 +59,7 @@ for (var i = 0; i < source.length; i++) {
     $(".select_source").append("<option value='" + source[i].source_name + "'>" + source[i].source_name + "</option>");
 }
 
-function loading_item(item, sec_item = '') {
 
-    var res;
-    $.ajax({
-        type: "POST",
-        url: ajax_url,
-        dataType: "JSON",
-        async: false,
-        data: {
-            type: item,
-            col: sec_item
-        },
-        success: function (data) {
-            res = data;
-        }, error: function () {
-            alertLayer("獲取資料失敗", "error");
-        }
-    });
-
-    return res;
-}
 
 // 送出按鈕
 $('.submit_btn').click(function () {
@@ -123,5 +103,54 @@ $('.x').click(function () {
 $('.mask').click(function () {
     $('.mask').css('display', 'none');
     $('.plus_dialog').css('display', 'none');
+    $('.dia_setting').css('display', 'none');
 })
+
+// 新增商品視窗設定
+$('.setting').click(function () {
+    $('.plus_dialog').css('display', 'none');
+    $('.dia_setting').css('display', 'block');
+
+    // 載入select_clf
+    select_clf = loading_item('classification_blind_box');
+    $('.select_clf').empty();
+    for (var i = 0; i < select_clf.length; i++) {
+        $(".select_clf").append("<option value='" + select_clf[i].set_name + "'>" + classification_blind_box[i].set_name + "</option>");
+    }
+
+    $('.select_clf').change(function () {
+        select_classification_blind_box_text = $('.select_clf').find(':selected').text();
+        classification_sub = loading_item('classification_sub', select_classification_blind_box_text);
+        $('.select_clf_sub').empty();
+        for (var i = 0; i < classification_sub.length; i++) {
+            $(".select_clf_sub").append("<option value='" + classification_sub[i].set_sub_name + "'>" + classification_sub[i].set_sub_name + "</option>");
+        }
+    });
+
+    // $('.btn_def_set').click()
+
+})
+
+function loading_item(item, sec_item = '') {
+
+    var res;
+    $.ajax({
+        type: "POST",
+        url: ajax_url + '?action=' + item,
+        dataType: "JSON",
+        async: false,
+        data: {
+            col: sec_item
+        },
+        success: function (data) {
+            res = data;
+        }, error: function () {
+            alertLayer("獲取資料失敗", "error");
+        }
+    });
+
+    return res;
+}
+
+
 

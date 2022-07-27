@@ -92,18 +92,17 @@
     <h3>設定預設分類</h3>
     <h5>分類</h5>
     <div class='form_content'>
-        <select name='dia_add_classification' class='dia_add_classification'>
+        <select name='dia_add_classification' class='select_clf'>
 
         </select>
         <div class='plus'>+</div>
-        <select name='dia_add_classification_sub' class='dia_add_classification_sub'>
-            
+        <select name='dia_add_classification_sub' class='select_clf_sub'>
+
         </select>
     </div>
     
-    
     <div class='btn'>
-        <div class='add_btn'>新增</div>
+        <div class='btn_def_set'>設定</div>
     </div>
     
 </form>
