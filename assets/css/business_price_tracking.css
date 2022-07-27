@@ -291,7 +291,7 @@ audio {
   margin-bottom: 10px;
 }
 
-.dia_setting .add_btn {
+.dia_setting .btn_def_set {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -306,7 +306,7 @@ audio {
   transition-duration: 0.1s;
 }
 
-.dia_setting .add_btn:hover {
+.dia_setting .btn_def_set:hover {
   border: 5px solid #fb96b8;
 }
 

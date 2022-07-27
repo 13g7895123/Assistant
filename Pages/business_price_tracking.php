@@ -59,6 +59,7 @@
     <!-- <audio autoplay loop>
         <source src="/Assistant/assets/music/test.mp3">
     </audio> -->
+    <input type='hidden' class='input_default_setting'/>
 </div>
 
 <div class='plus_dialog'>
@@ -107,30 +108,4 @@
     
 </form>
 
-
-<!-- <div class='default_setting_dialog'>
-    <form  method="post" action='./Pages/ajax/business_price_tracking_form_add_product.php' name='form_add_product' class='form_add_product'>
-        <h3>新增商品</h3>
-        <div class='add_product_left_icon'>
-            <div class='setting'>
-                <i class="fa-solid fa-gear"></i>
-            </div>
-            <div class='x'>
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>
-        <div>分類</div>
-        <input name='dia_add_classification' class='dia_add_classification'/>
-        <div class='plus'>+</div>
-        <input name='dia_add_classification_sub' class='dia_add_classification_sub'/>
-        <hr>
-        <div>名稱</div>
-        <input name='dia_add_item_name' class='dia_add_item_name'/>
-        <hr>
-        <div class='btn'>
-            <div class='add_btn'>新增</div>
-        </div>
-        
-    </form>
-</div> -->
 <div class='setting_dialog'></div>

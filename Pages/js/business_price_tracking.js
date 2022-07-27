@@ -75,6 +75,14 @@ $('.list_btn').click(function () {
 $('.plus_btn').click(function () {
     $('.plus_dialog').css('display', 'block');
     $('.mask').css('display', 'block');
+
+    // 檢查預設有沒有值，有的話套用
+    if ($('.input_default_setting').val() != '') {
+        def_val = $('.input_default_setting').val();
+        def_val_clf = def_val.split(',')[0];
+        select_clf_sub = def_val.split(',')[1];
+        $('.dia_add_item_name').focus();
+    }
 });
 
 $('.add_btn').click(function () {
@@ -127,7 +135,26 @@ $('.setting').click(function () {
         }
     });
 
-    // $('.btn_def_set').click()
+    $('.btn_def_set').click(function () {
+        select_clf = $(".select_clf :selected").text();
+        select_clf_sub = $(".select_clf_sub :selected").text();
+        $('.input_default_setting').val(select_clf + ',' + select_clf_sub);
+        $('.plus_dialog').css('display', 'block');
+        $('.dia_add_classification').val(select_clf);
+        $('.dia_add_classification_sub').val(select_clf_sub);
+        // $('.plus_dialog').css('display', 'block');
+        $('.dia_setting').css('display', 'none');
+        $('.dia_add_item_name').focus();
+    })
+
+    // 按下ENTER視為點擊按鈕(未作用)
+    $(".dia_add_item_name").keypress(function (e) {
+        code = (e.keyCode ? e.keyCode : e.which);
+        if (code === 13) {
+            $('.btn_def_set').click();
+            return false;
+        }
+    });
 
 })
 
