@@ -8,95 +8,86 @@ if (BaseWork::_get('PageName') != "" && file_exists('Pages/' . BaseWork::_get('P
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="zh-tw" >
-<head>
-    <meta charset="UTF-8">
-    <title>Assistant</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Assistant</title>
 
-    <!-- 引入JQuery -->
-    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
-    
-    <!-- 引入Bootstrap的CSS -->
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+        <!-- 引入JQuery -->
+        <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+        
+        <!-- 引入Bootstrap的CSS -->
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
 
-    <!-- 引入font-awesome的CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
-    <!-- <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css"> -->
+        <!-- 引入font-awesome的CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> -->
+        <!-- <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css"> -->
 
-    <!-- 引入Bootstrap的js -->
-    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+        <!-- 引入Bootstrap的js -->
+        <!-- <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script> -->
 
-    <!-- 引入Vue.js -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js'></script>
+        <!-- 引入Vue.js -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.js'></script>
 
-</head>
-<body>
+        <!-- 引入自寫CSS -->
+        <link rel="stylesheet" type="text/css" href="./assets/css/index.css">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="../assets/images/logo.png" width=20px></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Business
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="?PageName=business_price_tracking">價格追蹤</a></li>
-                            <li><a class="dropdown-item" href="?PageName=business_blind_box_set_building">分類建置</a></li>
-                            <li><a class="dropdown-item" href="?PageName=business_">商品需求</a></li>
-                            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?PageName=bs_test">bs_test</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?PageName=plan01">plan01</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+        <!-- 引入字體 -->
+        <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet"> 
+
+    </head>
+    <body>
+        <div class='nav_bar'>
+            <div class='nav_main'>
+                <div class='left'>
+                    <div class='nav_block stock'>
+                        <label class='drop_down'>Stock</label>
+                        <div class='dropdown_content'>
+                            <a href='?PageName=stock_legal_person' style='text-decoration:none'><div class='first_section'>法人買賣超</div></a>
+                            <a href='#' style='text-decoration:none'><div>2</div></a>
+                            <a href='#' style='text-decoration:none'><div>3</div></a>
+                        </div>                    
+                    </div>
+                    <div class='nav_block business'>
+                        <label class='drop_down'>Business</label>
+                        <div class='dropdown_content'>
+                            <a href='?PageName=business_price_tracking' style='text-decoration:none'><div class='first_section'>盲盒</div></a>
+                            <a href='#' style='text-decoration:none'><div>2</div></a>
+                            <a href='#' style='text-decoration:none'><div>3</div></a>
+                        </div> 
+                    </div>
+                    <!-- <div class='nav_block'>3</div> -->
+                </div>
+                <div class='logo'>
+                    <img src='./assets/images/test logo_100.png' with="100" heigh="100" alt="LOGO">
+                </div>
+                <div class='right'>
+                    <div class='nav_block'>1</div>
+                    <div class='nav_block'>2</div>
+                    <div class='nav_block'>3</div>
+                </div>
             </div>
         </div>
-    </nav>
-    <div class="page-content container">
-        <!-- PAGE CONTENT BEGINS -->                
-        <?php
-            //顯示頁面
-            include('Pages/' . $NOW_Page . '.php');
-        ?>
-        <!-- PAGE CONTENT ENDS -->
-    </div><!-- /.page-content -->
-    
-</body>
-<script>
-    $(document).ready(function() {
-        <?php
-            include(__DIR__ . '/Pages/js/' . $NOW_Page . '.js');
-        ?>
-    })
-</script>
+        
+        <div class="container">
+            <!-- PAGE CONTENT BEGINS -->                
+            <?php
+                //顯示頁面
+                include('Pages/' . $NOW_Page . '.php');
+            ?>
+            <!-- PAGE CONTENT ENDS -->
+        </div><!-- /.page-content -->
+        
+    </body>
+    <script>
+        $(document).ready(function() {
+            const ajax_url = "<?php if ($NOW_Page) echo 'Pages/ajax/' . $NOW_Page . '.php'; ?>";
+            <?php
+                include(__DIR__ . '/Pages/js/' . $NOW_Page . '.js');
+            ?>
+        })
+    </script>
+</html>

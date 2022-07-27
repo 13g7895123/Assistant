@@ -1,3 +1,122 @@
-.container {
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: #5111F3;
+}
+
+.nav_bar {
     width: 100%;
+    height: 100px;
+    max-width: 1024pxs;
+    /* position: fixed; */
+}
+
+.nav_bar .nav_main {
+    max-width: 1024px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nav_bar .logo {
+    width: 100px;
+    height: 100px;
+    position: relative;
+}
+
+.nav_bar .logo img {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.nav_main .left {
+    width: 300px;
+    margin-right: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav_main .right {
+    width: 300px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav_main .nav_block {
+    /* width: 50px; */
+    height: 40px;
+    background-color: #fae3fc;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    font-size: 24px;
+    font-family: 'Oleo Script', 'Microsoft JhengHei';
+    color: #5111F3;
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    transition-duration: 0.1s;
+}
+
+.nav_main .nav_block:hover {
+    border: 5px solid #E1B3FF;
+    box-sizing: border-box;
+}
+
+.stock label,
+.business label {
+    font-size: 24px;
+    font-family: 'Oleo Script';
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.stock:hover .dropdown_content,
+.business:hover .dropdown_content {
+    display: block;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 5px;
+    /* background-color: #fae3fc; */
+    min-width: 100px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    z-index: 1;
+    transition-duration: 3s;
+
+}
+
+.dropdown_content div {
+    width: 100px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #fae3fc;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    transition-duration: 0.1s;
+}
+
+.dropdown_content div:hover {
+    border: 5px solid #E1B3FF;
+    box-sizing: border-box;
+}
+
+.dropdown_content .first_section {
+    margin-top: 20px;
 }

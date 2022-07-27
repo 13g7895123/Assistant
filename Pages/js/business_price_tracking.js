@@ -88,7 +88,7 @@ $('.submit_btn').click(function () {
 
 // 標題右側列表符號
 $('.list_btn').click(function () {
-    location.href = '/Assistant/index.php?PageName=business_price_tracking_list'
+    location.href = '../../index.php?PageName=business_price_tracking_list'
 });
 
 // 標題右側加號 -> 打開新增商品對話視窗

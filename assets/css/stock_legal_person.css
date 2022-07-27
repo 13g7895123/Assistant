@@ -1,0 +1,141 @@
+* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+body {
+    background-image: url(../images/stock_bgp.jpg);
+    background-size: cover;
+    /* background-position: center; */
+}
+
+.legal_person {
+    /* border: 1px solid #000; */
+    max-width: 1124px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 15px;
+    top: 0px;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.legal_person .top {
+    display: flex;
+    justify-content: center;
+
+}
+
+.legal_person .top .block {
+    width: 60px;
+    height: 60px;
+    /* border: 1px solid #000; */
+    border-radius: 50%;
+    background-color: #fae3fc;
+    /* border-radius: 15px; */
+    margin: 15px;
+    /* padding: 15px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.legal_person .mid {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.it,
+.fi,
+.it_fi {
+    border-radius: 10px;
+    position: relative;
+}
+
+.it_content,
+.fi_content,
+.it_fi_content {
+    max-height: 570px;
+    overflow-y: auto;
+}
+
+.it .mask,
+.fi .mask,
+.it_fi .mask {
+    background-color: #fae3fc;
+}
+
+.title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 30px 10px 0px 10px;
+    color: #555;
+    /* border-bottom: 1px solid #555; */
+    padding-bottom: 10px;
+    letter-spacing: 10px;
+    /* margin-bottom: 30px; */
+}
+
+.col_name,
+.col_data {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 10px; */
+    padding: 5px;
+    color: #555;
+}
+
+.col_data {
+    border-bottom: 1px solid #d9badc;
+}
+
+.col_data:hover {
+    background-color: #C5B7F6;
+    color: #fff;
+    cursor: pointer;
+}
+
+.col_name {
+    margin-top: 0px;
+    padding-right: 15px;
+    background-color: #C5B7F6;
+    color: #fff;
+}
+
+.col_name div {
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+}
+
+.col_data div {
+    width: 100px;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px 10px;
+}
+
+.col_name .name,
+.col_data .name {
+    width: 120px;
+}
