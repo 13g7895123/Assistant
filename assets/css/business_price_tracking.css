@@ -245,10 +245,6 @@ input {
   transform: translate(-50%, -50%);
 }
 
-.show {
-  display: block;
-}
-
 audio {
   position: absolute;
   right: 15px;

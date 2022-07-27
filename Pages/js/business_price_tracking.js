@@ -93,8 +93,8 @@ $('.list_btn').click(function () {
 
 // 標題右側加號 -> 打開新增商品對話視窗
 $('.plus_btn').click(function () {
-    $('.plus_dialog').addClass('show');
-    $('.mask').addClass('show');
+    $('.plus_dialog').css('display', 'block');
+    $('.mask').css('display', 'block');
 });
 
 $('.add_btn').click(function () {
@@ -119,4 +119,9 @@ $('.x').click(function () {
     }
 
 });
+
+$('.mask').click(function () {
+    $('.mask').css('display', 'none');
+    $('.plus_dialog').css('display', 'none');
+})
 

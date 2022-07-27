@@ -59,6 +59,14 @@ if (BaseWork::_get('PageName') != "" && file_exists('Pages/' . BaseWork::_get('P
                             <a href='#' style='text-decoration:none'><div>3</div></a>
                         </div> 
                     </div>
+                    <div class='nav_block assistant'>
+                        <label class='drop_down'>Assistant</label>
+                        <div class='dropdown_content'>
+                            <a href='#' style='text-decoration:none'><div>吃飯</div></a>
+                            <a href='#' style='text-decoration:none'><div>2</div></a>
+                            <a href='#' style='text-decoration:none'><div>3</div></a>
+                        </div> 
+                    </div>
                     <!-- <div class='nav_block'>3</div> -->
                 </div>
                 <div class='logo'>

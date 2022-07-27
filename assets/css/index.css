@@ -64,6 +64,8 @@ a:active {
     float: left;
     overflow: hidden;
     transition-duration: 0.1s;
+    margin: 15px;
+    /* padding: 15px; */
 }
 
 .nav_main .nav_block:hover {
