@@ -1,0 +1,28 @@
+.ass_db_user_ceate .ip {
+    width: 50px;
+}
+
+.ass_db_user_ceate .btn_group {
+    display: flex;
+}
+
+.ass_db_user_ceate .btn_submit {
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.ass_db_user_ceate #btn_add_uname,
+.ass_db_user_ceate #btn_add_type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 5px;
+    border: 1px solid #000;
+    cursor: pointer;
+}

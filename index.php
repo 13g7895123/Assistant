@@ -15,7 +15,7 @@ if (BaseWork::_get('PageName') != "" && file_exists('Pages/' . BaseWork::_get('P
         <title>Assistant</title>
 
         <!-- 引入JQuery -->
-        <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script> -->
         
         <!-- 引入Bootstrap的CSS -->
         <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
@@ -37,6 +37,11 @@ if (BaseWork::_get('PageName') != "" && file_exists('Pages/' . BaseWork::_get('P
 
         <!-- 引入字體 -->
         <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet"> 
+
+        <!-- 引入jQuery Editable Select -->
+        <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script src="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.js"></script>
+        <link href="//rawgithub.com/indrimuska/jquery-editable-select/master/dist/jquery-editable-select.min.css" rel="stylesheet">
 
     </head>
     <body>
@@ -62,7 +67,7 @@ if (BaseWork::_get('PageName') != "" && file_exists('Pages/' . BaseWork::_get('P
                     <div class='nav_block assistant'>
                         <label class='drop_down'>Assistant</label>
                         <div class='dropdown_content'>
-                            <a href='#' style='text-decoration:none'><div>吃飯</div></a>
+                            <a href='?PageName=ass_db_user_create' style='text-decoration:none'><div>DB User建立</div></a>
                             <a href='#' style='text-decoration:none'><div>2</div></a>
                             <a href='#' style='text-decoration:none'><div>3</div></a>
                         </div> 

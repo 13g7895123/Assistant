@@ -10,6 +10,9 @@ a:active {
     height: 100px;
     max-width: 1024pxs;
     /* position: fixed; */
+    /* border-bottom: 10px solid #000;
+    border-image: -webkit-linear-gradient(left, #75512d, #f7e0b6) 10 0;
+    border-image: -moz-linear-gradient(left, #75512d, #f7e0b6) 10 0; */
 }
 
 .nav_bar .nav_main {
@@ -74,7 +77,8 @@ a:active {
 }
 
 .stock label,
-.business label {
+.business label,
+.assistant label {
     font-size: 24px;
     font-family: 'Oleo Script';
     font-weight: 400;
@@ -82,7 +86,8 @@ a:active {
 }
 
 .stock:hover .dropdown_content,
-.business:hover .dropdown_content {
+.business:hover .dropdown_content,
+.assistant:hover .dropdown_content {
     display: block;
 }
 
