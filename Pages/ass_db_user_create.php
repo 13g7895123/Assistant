@@ -5,14 +5,14 @@
     <select id="select_name">
     </select>
     <div class='db_ip'>IP</div>
-    <input class='ip'>.
-    <input class='ip'>.
-    <input class='ip'>.
-    <input class='ip'>
+    <input class='ip ip_01'>.
+    <input class='ip ip_02'>.
+    <input class='ip ip_03'>.
+    <input class='ip ip_04'>
     <div class='db_type'>類別</div>
     <select id="select_category">
         <option>remote</option>
-        <option>localhost</option>
+        <option>local</option>
     </select>
     <div class='btn_submit'>送出</div>
     <hr>
