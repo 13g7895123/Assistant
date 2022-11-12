@@ -1,24 +1,29 @@
-// $('#select_name').editableSelect()
-//     .on('select.editable-select', function (e, li) {
-//         $('#last-selected').html(
-//             li.val() + '. ' + li.text()
-//         );
-//     });
+$('#sel_name').focus();
 
 // 載入USER資料
 user_data = get_data('user');
-$('#select_name').empty();
+$('#sel_name').empty();
 for (i = 0; i < user_data.length; i++) {
-    $('#select_name').append('<option>' + user_data[i].name + '</option>');
+    $('#sel_name').append('<option>' + user_data[i].name + '</option>');
 }
 
-var user_name, ip, ip_tail, category;
+// 載入最後一次IP
+var last_ip = get_data('last_ip');
+for (i = 0; i < 4; i++) {
+    $('#ip0' + (i + 1)).attr('value', last_ip[i]);
+}
+
+var user, user_name, ip, ip_tail, category, full_acc;
 var data_list = [];
-$('.btn_submit').click(function () {
-    user_name = $('#select_name').find(':selected').text();     // USERNAME前半
-    ip = $('.ip_01').val() + '-' + $('.ip_02').val() +          // IP前半
-        '-' + $('.ip_03').val() + '-' + $('.ip_04').val();
-    category = $('#select_category').find(':selected').text();  // 類別
+
+// 送出按鈕
+$('#submit').click(function () {
+
+    // 取得資料
+    user_name = $('#sel_name').find(':selected').text();     // USERNAME前半
+    ip = $('#ip01').val() + '-' + $('#ip02').val() +          // IP前半
+        '-' + $('#ip03').val() + '-' + $('#ip04').val();
+    category = $('#sel_category').find(':selected').text();  // 類別
     if (category == 'remote') {
         user = user_name + '_remote';                           // 完整USERNAME
         ip = ip + '.dynamic-ip.hinet.net';                      // 完整IP        
@@ -27,9 +32,13 @@ $('.btn_submit').click(function () {
         ip = 'localhost';
     }
     full_acc = "'" + user + "'@'" + ip + "'";
-    $('.show01').html('CREATE USER ' + full_acc + " IDENTIFIED BY '820820';");
-    $('.show02').html('GRANT ALL PRIVILEGES ON db_' + user_name + ".* TO " + full_acc + ';');
-    $('.show03').html('FLUSH PRIVILEGES;');
+
+    // 顯示資料
+    $('#show').html(
+        'CREATE USER ' + full_acc + " IDENTIFIED BY '820820';" + '</br>' +
+        'GRANT ALL PRIVILEGES ON db_' + user_name + ".* TO " + full_acc + ';' + '</br>' +
+        'FLUSH PRIVILEGES;' + '</br>'
+    );
 
     data_list = [];      // 寫入前先清空
     data_list.push({
@@ -39,22 +48,29 @@ $('.btn_submit').click(function () {
     });
 
     // 寫入資料庫
-    $.ajax({
-        type: "POST",
-        url: ajax_url + '?action=submit',
-        data: {
-            data: JSON.stringify(data_list)
-        },
-        dataType: 'JSON',
-        success: function (data) {
-            if (data.success) {
-                alert('更新成功!');
-            }
-        }, error: function () {
-            alert('更新資料有誤!');
-        }
-    });
+    update_data(data_list);
+
+    // 顯示元件
+    $('.btn_copy').css('display', 'block');
+    $('#hr2').css('display', 'block');
 });
+
+$('.btn_copy').css('display', 'none');
+$('#hr2').css('display', 'none');
+$('#input_show').css('display', 'none');
+
+$('#btn_copy').click(function () {
+    copy_text();
+});
+
+$('#btn_add_uname').click(function () {
+    var uname = $('#input_add_uname').val();
+    if (uname != '') {
+        add_user(uname);
+    } else {
+        alert('使用者名稱不可為空!');
+    }
+})
 
 function get_data(action) {
 
@@ -67,7 +83,6 @@ function get_data(action) {
         success: function (data) {
             if (data.success) {
                 res = data.data;
-                console.log(res);
             } else {
                 alert(data.msg);
             }
@@ -77,4 +92,56 @@ function get_data(action) {
     });
 
     return res;
+}
+
+function update_data(data) {
+    $.ajax({
+        type: "POST",
+        url: ajax_url + '?action=submit',
+        data: {
+            data: JSON.stringify(data)
+        },
+        dataType: 'JSON',
+        success: function (data) {
+            if (data.success == false) {
+                alert(data.msg);
+            } else {
+                $('#show_data').removeClass('hidden');
+            }
+        }, error: function () {
+            alert('更新資料有誤!');
+        }
+    });
+}
+
+function copy_text() {
+    $('#input_show').css('display', 'block');          // 顯示INPUT
+    $('#input_show').val($('#show').text());           // 把要複製的資料放到INPUT
+    var ele = document.getElementById("input_show");
+    ele.select();
+    document.execCommand('copy');
+    $('#input_show').css('display', 'none');
+    alert('已複製到剪貼簿!');
+}
+
+const add_user = (user) => {
+    $.ajax({
+        type: "POST",
+        url: ajax_url + '?action=add_user',
+        data: {
+            user: user
+        },
+        dataType: 'JSON',
+        success: function (data) {
+            if (data.success) {
+                $('#input_add_uname').val('');
+                alert('新增成功');
+            }
+            else {
+                alert(data.msg);
+            }
+        }, error: function () {
+            alert('更新資料有誤!');
+        }
+    });
 }

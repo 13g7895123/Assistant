@@ -6,7 +6,8 @@
     display: flex;
 }
 
-.ass_db_user_ceate .btn_submit {
+.ass_db_user_ceate .btn_submit,
+.ass_db_user_ceate .btn_copy {
     width: 50px;
     display: flex;
     align-items: center;
