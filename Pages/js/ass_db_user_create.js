@@ -135,6 +135,7 @@ const add_user = (user) => {
         success: function (data) {
             if (data.success) {
                 $('#input_add_uname').val('');
+                location.reload();
                 alert('新增成功');
             }
             else {
